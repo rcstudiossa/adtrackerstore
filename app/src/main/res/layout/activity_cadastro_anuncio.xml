@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    tools:context="com.adtracker.adtracker.CadastroAnuncioActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/ll_geral"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="8dp"
+            tools:context="com.fichapp.activity.CadastroAnuncioActivity">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_lista_imagens_anuncio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:scrollbarStyle="insideInset"
+                android:scrollbars="horizontal"
+                app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_rv_lista_imagens_anuncio" />
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/til_titulo_anuncio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/field_margin">
+
+                <EditText
+                    android:id="@+id/et_titulo_anuncio"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="Título do Anúncio"
+                    android:inputType="textCapWords"
+                    android:maxLength="40" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/field_margin">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="top|start"
+                    android:hint="Descrição do Anúncio"
+                    android:inputType="textMultiLine"
+                    android:maxLines="6"
+                    android:scrollbars="vertical" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/field_margin"
+                android:weightSum="2"
+                android:orientation="horizontal">
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/til_preco_antigo"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp">
+
+                    <EditText
+                        android:id="@+id/et_preco_antigo"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:digits="0123456789,."
+                        android:hint="Preço Antigo"
+                        android:inputType="number" />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/til_preco_novo"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp">
+
+                    <EditText
+                        android:id="@+id/et_preco"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:digits="0123456789,."
+                        android:hint="Preço Novo"
+                        android:inputType="number" />
+
+                </android.support.design.widget.TextInputLayout>
+
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CATEGORIA"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_marginTop="@dimen/field_margin"
+                android:layout_marginStart="@dimen/field_margin"/>
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/field_margin"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_gravar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/ic_list" />
+
+</RelativeLayout>
